@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivelacion de curso de React</title>
+</head>
+<h1>Nivelacion de React</h1>
+<body>
+  <script>
+    const myFunc = (param) => {}
+    const num = 10
+    myFunc(num > 5 ? 'verdadero' : 'false')
+  </script>
+  <script>
+    // Método Push
+    const nums1 = [1,2,3,4]
+    console.log(nums1)
+    const nums2 = nums1.push(5)
+    console.log(nums2)
+   </script>
+   <script>
+    // Método Concat
+    const numbersB = [10,11,12,13]
+    console.log(numbersB)
+    const numbersC = numbersB.concat(14)
+    console.log(numbersC) 
+   </script> 
+   <script>
+    // Método Spread Operator
+    const numbersD = [14,15,16,17]
+    console.log(numbersD)
+    const numbersE = [...numbersD, 18]
+    console.log(numbersE)
+     // Método Spread Operator con Objetos
+     const individuo = {
+      nombresito: 'Santiago',
+      pais: 'Argentina'
+     }
+     console.log(individuo)
+
+     const otroIndividuo = {
+      ...individuo,
+      nombresito: 'Pablo',
+      edad: '27 años'
+     }
+     console.log(otroIndividuo)  
+     //DESESTRCUCTURACIÓN
+     //Desestructuración de arrays
+     const edades =[12,23,34,41]
+     console.log(edades[2])
+
+     const edadesA =[12,23,34,41]
+     const[edadJuan,edadHernan,edadSeba,edadMatias]= edadesA
+
+     console.log(edadHernan)
+     console.log(edadesA[3])
+
+      //Desestructuración de Objetos
+      const tipo = {
+        nombre:'Michael',
+        edad: 35,
+      }
+      console.log(tipo.nombre)
+
+      const{nombre} = tipo
+
+      console.log(nombre)
+
+      const tipoA = {
+        nombre:'Fabian',
+        edad: 33,
+      }
+      console.log(tipoA.edad)
+
+      const{edad} = tipoA
+
+      console.log(edad)
+
+      
+      //Desestructuración de Objetos
+      // Dos objetos en el mismo scope con las mismas propiedades
+      const mujer1 = {
+        sobreNombre: 'Sofi',
+        edadActual: 27
+      }
+      const mujer2 = {
+        sobreNombre: 'Pau',
+        edadActual: 29
+      }
+      const {edadActual:edadActualSofi} = mujer1
+      
+      console.log(edadActualSofi)
+
+      const {edadActual:edadActualPau} = mujer2
+      
+      console.log(edadActualPau)
+      //Desestructuración de Objetos
+      // Dos objetos en el mismo scope con las mismas propiedades pero usando let
+      let mujer3 = {
+        sobreNombre: 'Ani',
+        edadActual: 32
+      }
+      let mujer4 = {
+        sobreNombre: 'Mari',
+        edadActual: 34
+      }
+      let {edadActual:edadActualAni} = mujer3
+      
+      console.log(edadActualAni)
+
+      let {edadActual:edadActualMari} = mujer4
+      
+      console.log(edadActualMari)
+   </script>
+   <h1>
+    PROMESAS
+   </h1>
+   <script>
+    const irAlRestaurante = () => {
+      return 'llegué al restaurante'
+    }
+
+    const pedirComida = () => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          //resolve('recibo comida')
+          reject('No hay comida')
+      }, 3000)
+     })
+    } 
+     
+    const comer = () => {
+      return 'termino de comer'
+    }
+    
+    const pagar = () => {
+      return 'terminar de pagar'
+    }
+
+    const irse = () => {
+      return 'llegar a casa'
+    }
+
+    console.log(irAlRestaurante())
+    pedirComida().then(result => {
+      console.log('valor devuelto por la promesa: ', result)
+      console.log(comer())
+      console.log(pagar())
+      console.log(irse ())
+    }, result => {
+      console.log('reject: ', result)
+    })
+    .catch(error => {
+      console.log('error: ', error)
+    })
+    .finally(() => {
+      console.log(irse())
+    })      
+   </script> 
+</body>
+</html>
